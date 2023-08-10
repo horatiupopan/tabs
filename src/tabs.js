@@ -10,7 +10,7 @@ const Tabs = () => {
     let tabRef = useRef(1);
 
     const clickTab = (i) => {
-        let array = Array(3).fill(null);
+        let array = Array(3).fill(0);
         array[i] = 1;
         setTabs(array);
         tabRef.current = i + 1;
