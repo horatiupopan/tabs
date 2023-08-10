@@ -1,16 +1,12 @@
 import { useState } from 'react';
-import Tabs from './tabs.js';
 import TabHeader from './tabHeader.js';
-import FirstTab from './firstTab.js';
-import SecondTab from './secondTab.js';
-import ThirdTab from './thirdTab.js';
 
-const TabsPage = () => {
+const TabsPage = ({tabs}) => {
 
-    const tabTitles = ['First Tab', 'Second Tab', 'Third Tab'];
+    const tabTitles = tabs.map(t => t.tab);
     const [activeTab, setActiveTab] = useState(tabTitles[0]);
     const tabHeaders = tabTitles.map(t => <TabHeader tabTitle={t} isActive={activeTab === t} setActive={setActiveTab}/>);
-    const tabsContent = [<FirstTab />, <SecondTab />, <ThirdTab />];
+    const tabsContent = tabs.map(t => t.content);
     const currentTabContent = tabTitles.filter(t => activeTab === t).map(t => tabsContent[tabTitles.indexOf(t)]);
 
     return (
