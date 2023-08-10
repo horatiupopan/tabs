@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Tabs from './tabs.js';
+import TabsPage from './tabsPage.js';
 
 function App() {
   return (
     <div className="App">
-      <Tabs />
+      <TabsPage />
     </div>
   );
 }
